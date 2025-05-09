@@ -1,4 +1,4 @@
-
+/*this is the comment i am adding to check wether the git commits are working or not */
 <!DOCTYPE html>
 <html lang="en">
 <head>
