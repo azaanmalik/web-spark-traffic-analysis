@@ -38,14 +38,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $encodedPassword = base64_encode($password);
 
     // Check user existence
-    $stmt = $conn->prepare("SELECT * FROM register WHERE Email = ? AND Password = ?");
+    $stmt = $conn->prepare("SELECT Id, Email FROM register WHERE Email = ? AND Password = ?");
     $stmt->bind_param("ss", $email, $encodedPassword);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result && $result->num_rows === 1) {
         $user = $result->fetch_assoc();
-        $_SESSION['email'] = $user['Email'];
+        $_SESSION['user_id'] = $user['Id']; // Store user ID in session
+        $_SESSION['email'] = $user['Email']; // Optionally store email
         header("Location: maindashboard.php");
         exit;
     } else {

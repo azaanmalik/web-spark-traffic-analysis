@@ -1,5 +1,3 @@
-/*this is the comment i am adding to check wether the git commits are working or not */
-// Description: This is the main page of the Web Spark website, which provides information about the traffic exchange service and its features. It includes a navigation bar, a banner section, and sections explaining what a traffic exchange is, how it works, and its importance. The page also features cards highlighting additional features of the service and a footer with links to various pages.
 <!DOCTYPE html>
 <html lang="en">
 <head>
