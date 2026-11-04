@@ -1,0 +1,21 @@
+name: PHP syntax checks
+on:
+  push:
+    paths:
+      - '**/*.php'
+      - '.github/workflows/php-lint.yml'
+  pull_request:
+    paths:
+      - '**/*.php'
+      - '.github/workflows/php-lint.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check PHP syntax
+        run: |
+          find . -type f -name '*.php' -print0 | xargs -0 -n1 php -l
