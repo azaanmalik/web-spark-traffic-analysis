@@ -1,0 +1,16 @@
+name: Feature request
+description: Suggest a change while preserving existing functionality
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Problem and proposed improvement
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility considerations
+      description: Explain how existing behavior will be preserved
